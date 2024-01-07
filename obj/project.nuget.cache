@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Wm2ZnTZ9xzzDme6md19riQfhJPBhJgCBp5lIwygk6ujYl1SpCOffp/rAbEnflPmwt7Dj43ig6NNqb8Cmo5OMw==",
+  "dgSpecHash": "ICCwqJrMAmm/2SjMf+COA16a01+YCR3ZcmlE80dHbcgE/swPtVaHEDK1ltBVo/ZNu9YESEN0WOa2lX/TfjgsMw==",
   "success": true,
-  "projectFilePath": "C:\\GITHUB\\GrowEasy\\GrowEasy\\GrowEasy_API.csproj",
+  "projectFilePath": "C:\\GITHUB\\GrowEasy\\GrowEasy_API\\GrowEasy_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\al-ra\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\al-ra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

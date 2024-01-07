@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GrowEasyAPI.Migrations
+namespace GrowEasy_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240107215330_Initial")]
+    [Migration("20240107222953_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -93,6 +93,29 @@ namespace GrowEasyAPI.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("GrowEasy_API.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Description = "Relacionamentos"
+                        });
+                });
+
             modelBuilder.Entity("GrowEasy_API.Models.MenuItem", b =>
                 {
                     b.Property<int>("Id")
@@ -115,7 +138,6 @@ namespace GrowEasyAPI.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Nota")
@@ -126,23 +148,25 @@ namespace GrowEasyAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("MenuItems");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CategoryId = 0,
+                            CategoryId = 1,
                             Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                             Image = "https://redmangoimages.blob.core.windows.net/redmango/spring roll.jpg",
                             IsFavorite = false,
-                            Name = "Spring Roll",
+                            Name = "Como Fazer amigos e influenciar pessoas",
                             Nota = 7.9900000000000002
                         },
                         new
                         {
                             Id = 2,
-                            CategoryId = 0,
+                            CategoryId = 1,
                             Description = "Fusc tincidunt maximus leo, sed scelerisque massa auctor sit amet. Donec ex mauris, hendrerit quis nibh ac, efficitur fringilla enim.",
                             Image = "https://redmangoimages.blob.core.windows.net/redmango/idli.jpg",
                             IsFavorite = true,
@@ -282,6 +306,17 @@ namespace GrowEasyAPI.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("GrowEasy_API.Models.MenuItem", b =>
+                {
+                    b.HasOne("GrowEasy_API.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

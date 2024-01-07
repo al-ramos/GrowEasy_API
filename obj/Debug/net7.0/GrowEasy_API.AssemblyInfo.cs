@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrowEasy_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a073bf26d3f71bd591835a32f1b73abab87808d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrowEasy_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrowEasy_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

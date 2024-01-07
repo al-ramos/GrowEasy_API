@@ -75,6 +75,7 @@ namespace GrowEasy_API.Controllers
                         CategoryId = menuItemCreateDTO.CategoryId,
                         SpecialTag = menuItemCreateDTO.SpecialTag,
                         Description = menuItemCreateDTO.Description,
+                        IsFavorite = menuItemCreateDTO.IsFavorite,
                         Image = await _blobService.UploadBlob(fileName,SD.SD_Storage_Container,menuItemCreateDTO.File)
                     };
                     _db.MenuItems.Add(menuItemToCreate);
@@ -126,6 +127,7 @@ namespace GrowEasy_API.Controllers
                     menuItemFromDb.CategoryId = menuItemUpdateDTO.CategoryId;
                     menuItemFromDb.SpecialTag = menuItemUpdateDTO.SpecialTag;
                     menuItemFromDb.Description = menuItemUpdateDTO.Description;
+                    menuItemFromDb.IsFavorite = menuItemUpdateDTO.IsFavorite;
 
                     if(menuItemUpdateDTO.File!=null && menuItemUpdateDTO.File.Length > 0)
                     {

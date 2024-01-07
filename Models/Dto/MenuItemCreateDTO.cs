@@ -13,5 +13,6 @@ namespace GrowEasy_API.Models.Dto
         [Range(1, int.MaxValue)]
         public double Nota { get; set; }
         public IFormFile File { get; set; }
-    }
+		public bool IsFavorite { get; set; }
+		}
 }
