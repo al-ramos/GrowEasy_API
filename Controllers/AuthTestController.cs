@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using GrowEasy_API.Utility;
 
 
-namespace RedMango_API.Controllers
+namespace GrowEasy_API.Controllers
 {
     [Route("api/AuthTest")]
     [ApiController]
